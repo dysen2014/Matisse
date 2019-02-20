@@ -2,19 +2,19 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/preview.background">
+    android:background="@mipmap/login_bg">
 
     <com.matisse.widget.PreviewViewPager
         android:id="@+id/pager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingBottom="50dp" />
+        android:layout_height="match_parent" />
 
     <include
         layout="@layout/include_view_bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom" />
+        android:layout_gravity="bottom"
+        />
 
     <FrameLayout
         android:layout_width="wrap_content"

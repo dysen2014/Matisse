@@ -6,7 +6,7 @@
     <color name="color_base">#FFF98F4D</color>
     <color name="color_base_press">#77F98F4D</color>
 
-    <color name="navigation_bg">@color/white</color>
+    <color name="navigation_bg">@color/color_bg</color>
     <color name="preview_bg">@color/black</color>
     <color name="bottomTool_bg">@color/white</color>
 

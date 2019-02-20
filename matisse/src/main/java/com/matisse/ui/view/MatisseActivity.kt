@@ -21,6 +21,7 @@ import com.matisse.internal.entity.SelectionSpec
 import com.matisse.model.AlbumCallbacks
 import com.matisse.model.AlbumCollection
 import com.matisse.model.SelectedItemCollection
+import com.matisse.ui.BaseActivity
 import com.matisse.ui.adapter.AlbumMediaAdapter
 import com.matisse.ui.adapter.FolderMediaAdapter
 import com.matisse.utils.*
@@ -30,7 +31,7 @@ import kotlinx.android.synthetic.main.include_view_bottom.*
 import kotlinx.android.synthetic.main.include_view_navigation.*
 import java.util.*
 
-class MatisseActivity : AppCompatActivity(), MediaSelectionFragment.SelectionProvider,
+class MatisseActivity : BaseActivity(), MediaSelectionFragment.SelectionProvider,
         AlbumMediaAdapter.CheckStateListener, AlbumMediaAdapter.OnMediaClickListener,
         AlbumMediaAdapter.OnPhotoCapture, View.OnClickListener {
 
@@ -78,7 +79,7 @@ class MatisseActivity : AppCompatActivity(), MediaSelectionFragment.SelectionPro
             finish()
             return
         }
-        setContentView(R.layout.activity_matisse)
+        baseSetContentView(R.layout.activity_matisse)
 
         if (Platform.isClassExists("com.gyf.barlibrary.ImmersionBar")) {
             ImmersionBar.with(this).titleBar(toolbar)?.statusBarDarkFont(mSpec?.isDarkStatus == true)?.init()

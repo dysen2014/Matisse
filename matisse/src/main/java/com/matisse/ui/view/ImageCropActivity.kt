@@ -12,8 +12,10 @@ import com.gyf.barlibrary.ImmersionBar
 import com.matisse.R
 import com.matisse.entity.ConstValue
 import com.matisse.internal.entity.SelectionSpec
+import com.matisse.ui.BaseActivity
 import com.matisse.utils.BitmapUtils
 import com.matisse.utils.Platform
+import com.matisse.utils.StatusBarUtil
 import com.matisse.utils.UIUtils
 import com.matisse.widget.CropImageView
 import com.matisse.widget.IncapableDialog
@@ -21,7 +23,7 @@ import kotlinx.android.synthetic.main.activity_crop.*
 import kotlinx.android.synthetic.main.include_view_navigation.*
 import java.io.File
 
-class ImageCropActivity : AppCompatActivity(), View.OnClickListener, CropImageView.OnBitmapSaveCompleteListener {
+class ImageCropActivity : BaseActivity(), View.OnClickListener, CropImageView.OnBitmapSaveCompleteListener {
 
     private lateinit var cv_crop_image: CropImageView
 
@@ -37,7 +39,7 @@ class ImageCropActivity : AppCompatActivity(), View.OnClickListener, CropImageVi
         setTheme(mSpec.themeId)
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_crop)
+        baseSetContentView(R.layout.activity_crop)
 
         if (Platform.isClassExists("com.gyf.barlibrary.ImmersionBar")) {
             ImmersionBar.with(this).titleBar(toolbar)?.statusBarDarkFont(mSpec.isDarkStatus)?.init()

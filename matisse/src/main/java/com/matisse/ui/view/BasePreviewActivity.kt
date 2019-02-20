@@ -15,10 +15,12 @@ import com.matisse.entity.IncapableCause
 import com.matisse.entity.Item
 import com.matisse.internal.entity.SelectionSpec
 import com.matisse.model.SelectedItemCollection
+import com.matisse.ui.BaseActivity
 import com.matisse.ui.adapter.PreviewPagerAdapter
 import com.matisse.utils.PathUtils
 import com.matisse.utils.PhotoMetadataUtils
 import com.matisse.utils.Platform
+import com.matisse.utils.StatusBarUtil
 import com.matisse.widget.CheckView
 import com.matisse.widget.IncapableDialog
 import kotlinx.android.synthetic.main.activity_media_preview.*
@@ -27,7 +29,7 @@ import kotlinx.android.synthetic.main.include_view_bottom.*
 /**
  * Created by liubo on 2018/9/6.
  */
-open class BasePreviewActivity : AppCompatActivity(),
+open class BasePreviewActivity : BaseActivity(),
         View.OnClickListener, ViewPager.OnPageChangeListener {
 
     val mSelectedCollection = SelectedItemCollection(this)
@@ -48,11 +50,12 @@ open class BasePreviewActivity : AppCompatActivity(),
             return
         }
 
-        if (Platform.isClassExists("com.gyf.barlibrary.ImmersionBar")) {
-            ImmersionBar.with(this).hideBar(BarHide.FLAG_HIDE_STATUS_BAR)?.init()
-        }
+//        if (Platform.isClassExists("com.gyf.barlibrary.ImmersionBar")) {
+//            ImmersionBar.with(this).hideBar(BarHide.FLAG_HIDE_BAR)?.init()
+//        }
 
         setContentView(R.layout.activity_media_preview)
+
         if (Platform.hasKitKat19()) {
             window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
         }
@@ -82,6 +85,13 @@ open class BasePreviewActivity : AppCompatActivity(),
         original_layout.setOnClickListener(this)
 
         updateApplyButton()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (Platform.isClassExists("com.gyf.barlibrary.ImmersionBar")) {
+            ImmersionBar.with(this).hideBar(BarHide.FLAG_HIDE_BAR)?.init()
+        }
     }
 
     private fun countOverMaxSize(): Int {

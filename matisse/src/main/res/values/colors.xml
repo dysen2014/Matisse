@@ -14,4 +14,7 @@
     <color name="color_hint_text">#424242</color>
 
     <color name="preview_bottom_size">#61FFFFFF</color>
+    <color name="basic1">#133358</color>
+    <color name="basic2">#1056C4</color>
+    <color name="color_bg">#112647</color>
 </resources>

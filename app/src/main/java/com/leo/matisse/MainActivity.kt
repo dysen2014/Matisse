@@ -18,6 +18,7 @@ import com.matisse.entity.ConstValue
 import com.matisse.listener.OnCheckedListener
 import com.matisse.listener.OnSelectedListener
 import com.matisse.utils.Platform
+import com.matisse.utils.StatusBarUtil
 import com.matisse.widget.CropImageView
 import com.tbruyelle.rxpermissions2.RxPermissions
 import io.reactivex.Observer
@@ -30,7 +31,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        StatusBarUtil.setTransparent(this)
         btn_media_store.setOnClickListener {
             RxPermissions(this@MainActivity)
                     .request(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA)

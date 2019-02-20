@@ -4,6 +4,7 @@
     <style name="Animation.Bottom" parent="Theme.AppCompat.Light.Dialog">
         <item name="android:windowEnterAnimation">@anim/bottom_up_in</item>
         <item name="android:windowExitAnimation">@anim/bottom_down_out</item>
+        <item name="windowNoTitle">true</item>
     </style>
 
     //====================================== Theme Zhihu ===========================================
@@ -20,7 +21,7 @@
         // 图片预览界面背景色
         <item name="preview.background">@color/preview_bg</item>
         // 顶部导航条返回按钮资源图
-        <item name="navigation.backRes">@drawable/icon_arrow_right_white</item>
+        <item name="navigation.backRes">@mipmap/bar_icon_back_white</item>
 
         // 底部工具栏背景色
         <item name="bottomToolbar.bg">@color/bottomTool_bg</item>
@@ -79,18 +80,19 @@
     </style>
 
     <style name="Matisse.Dark" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="windowNoTitle">true</item>
         // 状态栏相关
         // 状态栏颜色 该属性同系统，低版本不支持
-        <item name="colorPrimaryDark">@color/color_base</item>
+        <item name="colorPrimaryDark">@color/navigation_bg</item>
 
         // 顶部导航条高度
         <item name="navigation.height">@dimen/navigation_height</item>
         // 顶部导航条背景色
-        <item name="navigation.background">@color/color_base</item>
+        <item name="navigation.background">@color/navigation_bg</item>
         // 图片预览界面背景色
         <item name="preview.background">@color/preview_bg</item>
         // 顶部导航条返回按钮资源图
-        <item name="navigation.backRes">@drawable/icon_arrow_right_white</item>
+        <item name="navigation.backRes">@mipmap/bar_icon_back_white</item>
 
         // 底部工具栏背景色
         <item name="bottomToolbar.bg">@color/bottomTool_bg</item>
